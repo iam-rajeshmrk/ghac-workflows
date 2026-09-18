@@ -1,4 +1,4 @@
-name: workflow dispatch demo
+name:  Input workflow dispatch demo
 
 on:
     workflow_dispatch:
