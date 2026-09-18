@@ -1,4 +1,4 @@
-name:  Input workflow dispatch demo
+name:  Schedule workflow dispatch demo
 
 on:
     workflow_dispatch:
@@ -12,6 +12,8 @@ on:
                     - dev
                     - staging
                     - prod
+    schedule:
+        - cron: '5 * * * *'   # Runs every minute
 
 jobs:
     run-manually: 
