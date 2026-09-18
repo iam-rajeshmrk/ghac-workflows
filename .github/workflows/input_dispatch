@@ -1,0 +1,23 @@
+name: workflow dispatch demo
+
+on:
+    workflow_dispatch:
+        inputs:
+            environment:
+                description: 'Select envrionment'
+                required: true
+                default: 'dev'
+                type: choice
+                options:
+                    - dev
+                    - staging
+                    - prod
+
+jobs:
+    run-manually: 
+        runs-on: ubuntu-latest
+        steps:
+            - name: Echo Selected Environment
+              run: echo "Selected environment is ${{github.event.inputs.environment}}"
+            - name: Echo message
+              run: echo "This is a demo workflow triggered manually."
